@@ -1,0 +1,109 @@
+*{
+	
+	margin: 0;
+	padding: 0;
+}
+
+/*clearfix : http://xiper.net/collect/html-and-css-tricks/css-tricks/clearfix Микро clearfix*/
+.clearfix:before,
+.clearfix:after {
+	content: "";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+
+body {
+	/* Font settings for different systems */
+	/*font-family: Arial, Helvetica, sans-serif;
+	font-size: 14 px;
+	line-height: 20 px;
+	font-weight: normal;
+	*/
+	font: normal 14px/20px Arial, Helvetica, sans-serif;
+}
+
+
+
+.content-center {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+
+/*style for columns-wrap*/
+.columns-wrap{
+	background: rgb(246, 245, 242);
+	padding-top: 30px;
+	
+}
+
+.columns-wrap .columns-text1 {
+	float: left;
+	width: 40%;
+	padding-left: 70px;
+	padding-bottom: 15px;
+}
+
+
+
+.columns-text1 h2{
+	font-weight: 300;
+	line-height: 2.5;
+}
+
+.columns-text1 span{
+	color: rgb(255, 116, 44);
+}
+
+.columns-text1 p{
+	margin-top: 0.5em;
+	margin-bottom: 2em;
+	color: rgb(149, 149, 149);
+}
+
+
+
+
+
+
+
+
+/*style for slider-bottom*/
+.slider-bottom {
+	background: rgb(93, 186, 181);
+	padding-bottom: 5px;
+	padding-top: 10px;
+}
+
+
+.box-dots {
+	text-align: center;
+}
+
+.box-dots div{
+	background: url("images/points_slider_bg.png");
+	width: 12px;
+	height: 13px;
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.box-dots div.active{
+	opacity: .5
+}
+
+
+.slider-wrap .slider-window .slider-item {
+	display: none;
+}
+
+.slider-wrap .slider-window .slider-item.active {
+	display: block;
+}
+
+.slider-wrap .slider-window .slider-item img {
+	max-width: 100%;
+}

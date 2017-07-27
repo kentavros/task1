@@ -1,0 +1,3 @@
+Telephone,Surname,Given Names,Gender,Nick Name,Company Name,Home Address,Home Number,Date of Birth
+380503914884,Yang,Charlth,Male,Jack,vanceinfo,Room405No37,025-7588787,2008-05-01
+380952798287,Henry,James,Female,James,vanceinfo,Room405No37,025-7588787,1986-05-01
