@@ -40,33 +40,25 @@
     </tr>
 
     <?php
-    if(delete_file($file)){MESSAGE_DEL_TRUE;}
-    if(upload_file()){FILE_UPLOAD;}
     if(!empty($files))
-    {
-    //Output the contents of the Upload folder and the Delete button
-    foreach ($files as $file) {
-    echo "<tr>";
-        echo "<td>" . $file['number'] . "</td>";
-        echo "<td>" . $file['file_name'] . "</td>";
-        echo "<td>" . file_size_convert($file['file_size']) . "</td>";
-        echo "<td class='alert-danger'><a href='index.php?action=delete&file_name=" . $file['file_name'] . "'>
-                Delete
-              </a></td>";
-        echo "</tr>";
+    {    //Output the contents of the Upload folder and the Delete button
+        foreach ($files as $file) {
+        echo "<tr>";
+            echo "<td>" . $file['number'] . "</td>";
+            echo "<td>" . $file['file_name'] . "</td>";
+            echo "<td>" . file_size_convert($file['file_size']) . "</td>";
+            echo "<td class='alert-danger'><a href='index.php?action=delete&file_name=" . $file['file_name'] . "'>
+                    Delete
+                  </a></td>";
+            echo "</tr>";
     }
 }
 else
 {
-    echo "<tr><td></td><td>< - Folder is empty - ></td><td></td><td></td></tr>";
+    echo "<tr><td></td><td>< - Folder is empty or Unavailable- ></td><td></td><td></td></tr>";
 }
 ?>
 </table>
-
-
-
-
-
 <!-- на jQuery (необходим для Bootstrap - х JavaScript плагины) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Включают все скомпилированные плагины (ниже), или включать отдельные файлы по мере необходимости -->

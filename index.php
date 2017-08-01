@@ -1,18 +1,23 @@
 <?php
 include ('libs/config.php');
 include ('libs/function.php');
-
-//Check the directory for files
-if (dir_exp($dir_up))
+//Upload fiels
+if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-    $files = dir_exp($dir_up);
+    upload_file();
 }
-else
+
+//Delete file
+if(isset($_GET['action']) && file_exists('upload/'.$_GET['file_name']))
 {
-    mkDirUpload($dir_up);
+    delete_file();
+}
+//Check the directory for files
+if (dir_exp(UPLOAD_PATH))
+{
+    $files = dir_exp(UPLOAD_PATH);
 }
 ?>
-
 <?php
 include('templates/template.php');
 ?>
