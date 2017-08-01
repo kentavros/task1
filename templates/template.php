@@ -28,9 +28,25 @@
         <input class="btn btn-success" type="submit" value="Upload" name="upload" />
     </div>
 </form>
-
+<p class="alert-success" style="margin: auto; width: 800px; text-align: center"><?php
+switch ($flag)
+{
+    case 1:
+        echo FILE_UPLOAD;
+        break;
+    case 2:
+        echo ERROR_UPLOAD;
+        break;
+    case 3:
+        echo MESSAGE_DEL_TRUE;
+        break;
+    case 4:
+        echo ERROR_DELETE;
+        break;
+}
+?></p>
 <!--The contents of the Upload folder -->
-<table class="table table-bordered table-hover ">
+<table class="table table-bordered table-hover" style="width: 800px; margin: auto;">
     <caption class="text-center">Contents of the directory </caption>
     <tr class="alert-info">
         <th>Number</th>
@@ -46,7 +62,7 @@
         echo "<tr>";
             echo "<td>" . $file['number'] . "</td>";
             echo "<td>" . $file['file_name'] . "</td>";
-            echo "<td>" . file_size_convert($file['file_size']) . "</td>";
+            echo "<td>" . fileSizeConvert($file['file_size']) . "</td>";
             echo "<td class='alert-danger'><a href='index.php?action=delete&file_name=" . $file['file_name'] . "'>
                     Delete
                   </a></td>";

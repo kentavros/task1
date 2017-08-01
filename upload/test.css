@@ -1,0 +1,63 @@
+*{
+	
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: normal 14px/20px Arial, Helvetica, sans-serif;
+	background:rgb(255, 210, 225);
+}
+.disc-select{
+	float:left;
+	margin-left: 100px;
+	margin-top: 100px;
+}
+
+.menu{
+	width: 300px;
+	height: 50px;
+	background: #fff;
+	float: left;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;	
+}
+
+.menu li{
+	list-style: none;
+	display: inline-block;
+}
+
+.menu .img-disk{
+	float:left;
+}
+
+.img-disk{
+	background: #fff url('images/disk_usage_-ico.png') no-repeat center;
+	width: 50px;
+	height: 50px;
+	border-radius: 5px 0px 0px 5px;
+}
+
+.menu .text{
+	float:left;
+}
+
+.text{
+	width: 200px;
+	height: 50px;
+	color: grey;
+	padding-top: 15px;
+}
+
+.menu .img-arrow{
+	float:left;
+}
+
+.img-arrow{
+	width: 50px;
+	height: 50px;
+	background: rgb(122, 204, 200) url('images/select_arrow_bottom.png') no-repeat center;
+	border-radius: 0px 5px 5px 0px;
+}
+

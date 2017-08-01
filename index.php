@@ -4,18 +4,33 @@ include ('libs/function.php');
 //Upload fiels
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-    upload_file();
+    if (uploadFile())
+    {
+        $flag = 1;
+    }
+    else
+    {
+        $flag=2;
+    }
 }
 
 //Delete file
 if(isset($_GET['action']) && file_exists('upload/'.$_GET['file_name']))
 {
-    delete_file();
+    if(deleteFile())
+    {
+        $flag=3;
+    }
+    else
+    {
+        $flag=4;
+    }
 }
+
 //Check the directory for files
-if (dir_exp(UPLOAD_PATH))
+if (dirExp(UPLOAD_PATH))
 {
-    $files = dir_exp(UPLOAD_PATH);
+    $files = dirExp(UPLOAD_PATH);
 }
 ?>
 <?php

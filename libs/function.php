@@ -1,7 +1,7 @@
 <?php
 //Функция просмотра директории и заодно проверки, директория ли это,
 //аргументом получает путь
-function dir_exp($path)
+function dirExp($path)
 {
     if(is_dir($path)){
         //yes is dir - go
@@ -9,7 +9,7 @@ function dir_exp($path)
         if($dir=opendir(UPLOAD_PATH))
         {
             $count =1;
-            $arr_fiels = array();
+            $arrFiels = array();
             while (false !== ($entry = readdir($dir)))
             {
                 //Игнорируем элементы .. и .
@@ -18,7 +18,7 @@ function dir_exp($path)
                 }
                 //создаем массив с именами и размерами файлов - а так же счетчик ставим в индекс, дальше
                 // его применить в выводе таблицы как номер п.п.
-                $arr_fiels[] = array(
+                $arrFiels[] = array(
                     'number' => $count,
                     'file_name' => $entry,
                     'file_size' => filesize("upload/".$entry)
@@ -27,7 +27,7 @@ function dir_exp($path)
 
             }
             closedir($dir);
-            return $arr_fiels;
+            return $arrFiels;
         }
     }
     else
@@ -37,15 +37,15 @@ function dir_exp($path)
 
 }
 
-
-
 //function Upload file
-function upload_file()
+function uploadFile()
 {
         if(is_uploaded_file($_FILES['file']['tmp_name']))
         {
-            move_uploaded_file($_FILES['file']['tmp_name'], "upload/".$_FILES['file']['name']);
-            return true;
+            if (move_uploaded_file($_FILES['file']['tmp_name'], "upload/".$_FILES['file']['name']))
+            {
+                return true;
+            }
         }
         else
         {
@@ -54,14 +54,17 @@ function upload_file()
 }
 
 //Delete file
-function delete_file()
+function deleteFile()
 {
-        unlink('upload/'.$_GET['file_name']);
+    if (unlink('upload/'.$_GET['file_name']))
+    {
         return true;
+    }
+        return false;
 }
 
 //функция перевода байтов в КБ, МБ, ГБ
-function file_size_convert($bytes)
+function fileSizeConvert($bytes)
 {
     if ($bytes >= 1073741824)
     {
