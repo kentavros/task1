@@ -39,12 +39,14 @@
         <th>Remove file</th>
     </tr>
 
-<?php
-if(!empty($files))
-{
+    <?php
+    if(delete_file($file)){MESSAGE_DEL_TRUE;}
+    if(upload_file()){FILE_UPLOAD;}
+    if(!empty($files))
+    {
     //Output the contents of the Upload folder and the Delete button
     foreach ($files as $file) {
-        echo "<tr>";
+    echo "<tr>";
         echo "<td>" . $file['number'] . "</td>";
         echo "<td>" . $file['file_name'] . "</td>";
         echo "<td>" . file_size_convert($file['file_size']) . "</td>";

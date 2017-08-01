@@ -21,8 +21,6 @@ function upload_file()
         }
         else
         {
-            echo $_FILES['file']['error'];
-            echo "Error upload";
             return false;
         }
     }
